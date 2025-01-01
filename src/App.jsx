@@ -43,14 +43,14 @@ const App = () => {
 
   return (
     <div className="bg-blue-300 min-h-screen flex justify-center">
-      <div className="container my-5 rounded-xl p-5 bg-white max-w-md">
+      <div className="container my-5 rounded-xl p-5 bg-white max-w-7xl">
         <h1 className="text-2xl font-bold mb-5">Todo App</h1>
-        <div className="addTodo mb-5 flex items-center">
+        <div className="addTodo mb-5 flex items-center w-full">
           <input
             onChange={handleChange}
             value={todo}
             type="text"
-            className="w-2/3 p-2 border rounded mr-2"
+            className="flex-grow p-2 border rounded mr-2"
             placeholder="Add your todo"
           />
           {isEditing ? (
@@ -72,7 +72,7 @@ const App = () => {
         <div className="todos">
           {todos.map(item => (
             <div key={item.id} className="todo flex items-center justify-between mb-3 p-2 border rounded bg-white w-full">
-              <div className="flex items-center">
+              <div className="flex items-center w-full">
                 <input
                   type="checkbox"
                   checked={item.isCompleted}
